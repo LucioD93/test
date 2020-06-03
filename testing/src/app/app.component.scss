@@ -1,0 +1,22 @@
+.inputField {
+  margin: 1rem;
+  label {
+    font-size: 0.9rem;
+    color: darkgray;
+  }
+  &.invalid {
+    input, select {
+      border-color: red;
+    }
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.inline {
+  display: inline-block;
+}
