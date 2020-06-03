@@ -11,14 +11,6 @@ import { Country } from './models/country';
 export class AppComponent implements OnInit {
   form: FormGroup;
   countryList: Country[] = [];
-  formErrors = {
-    name: false,
-    lastname: false,
-    email: false,
-    country: false,
-    gender: false,
-    phone: false
-  };
 
   constructor(
     private restService: RestService
@@ -76,7 +68,11 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form.value);
-    alert('Gracias por registrarte ' + this.form.value.name);
-    this.form.reset();
+    if (this.form.valid) {
+      alert('Gracias por registrarte ' + this.form.value.name);
+      this.form.reset();
+    } else {
+      alert('Verifica los campos e intentalo nuevamente');
+    }
   }
 }
